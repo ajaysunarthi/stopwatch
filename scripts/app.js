@@ -31,6 +31,12 @@
             lapindex = 0;
         var time = {};
 
+        vm.showButton = true;
+
+        vm.toggle = function () {
+        	 vm.showButton = !vm.showButton;
+        }
+
         vm.startTimer = function() {
 
             if (!(vm.timer.ms || vm.timer.seconds || vm.timer.ms)) {
@@ -57,11 +63,16 @@
         };
 
 
-        vm.stopTimer = function() {        
-            clearInterval(interval); 
-            pause = Date.now(); 
+        vm.stopTimer = function() {
+            clearInterval(interval);
+            pause = Date.now();
         };
 
+        vm.resetTimer = function() {
+            if (pause) { // Reset only when it is Stopped
+                init(); // Call the initialization function
+            }
+        };
 
     }
 
