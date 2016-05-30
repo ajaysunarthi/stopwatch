@@ -57,6 +57,12 @@
         };
 
 
+        vm.stopTimer = function() {        
+            clearInterval(interval); 
+            pause = Date.now(); 
+        };
+
+
     }
 
     appController.$inject = ['$scope'];
