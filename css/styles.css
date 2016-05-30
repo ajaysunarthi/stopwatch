@@ -4,8 +4,8 @@ body {
 }
 
 h1 {
-    font-family:  Lato;
-    color:teal;
+    font-family: Lato;
+    color: teal;
 }
 
 .time {
@@ -21,10 +21,20 @@ h1 {
 .buttons {
     margin-top: 20px;
 }
-.stop{background: #E5E5E5;}
+
+.stop {
+    background: #E5E5E5;
+}
+
 .btn-default {
-	margin: 20px;
-	border-color: teal;
+    margin: 20px;
+    border-color: teal;
+}
+
+button,
+button:active,
+button:focus {
+    outline: none !important;
 }
 
 @media (max-width: 500px) {
