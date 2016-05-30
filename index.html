@@ -8,7 +8,9 @@
 </head>
 
 <body ng-app="stopWatch" ng-controller="appCtrl as ctrl">
-{{ctrl.title}}
+<h1>{{ ctrl.timer.hours }} {{ ctrl.timer.minutes }}  {{ ctrl.timer.seconds }} </h1>
+  <p>{{ ctrl.timer.ms }}</p>
+  <button ng-click="ctrl.startTimer()">Start</button>
 <script src="scripts/app.js"></script>
 </body>
 
