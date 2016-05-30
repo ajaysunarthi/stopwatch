@@ -30,10 +30,16 @@
             <button class="btn btn-default " ng-show="ctrl.showButton" ng-click="ctrl.startTimer(); ctrl.toggle()">Start</button>
             <button class="btn btn-default stop" ng-hide="ctrl.showButton" ng-click="ctrl.stopTimer(); ctrl.toggle()">Stop</button>
             <button class="btn btn-default" ng-disabled="!ctrl.showButton" ng-click="ctrl.resetTimer()">Reset</button>
-            <button class="btn btn-default ">Split</button>
+            <button class="btn btn-default " ng-click="ctrl.splitTime()">Split</button>
 			<button class="btn btn-default ">Lap</button>            
         </div>
     </div>
+
+    <div class="row">
+    	<div ng-repeat=" obj in ctrl.splits">
+    	{{ obj }}</div>
+    </div>
+
     <script src="scripts/app.js"></script>
 </body>
 

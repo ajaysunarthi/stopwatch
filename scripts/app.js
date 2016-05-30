@@ -51,7 +51,6 @@
             interval = setInterval(function() {
                 $scope.$apply(function() {
                     timeElapsed = Date.now() - startTime;
-
                     vm.timer = {
                         ms: timeElapsed % 1000,
                         seconds: (Math.floor(timeElapsed / 1000)) % 60,
@@ -73,6 +72,24 @@
                 init(); // Call the initialization function
             }
         };
+
+
+        vm.splitTime = function () {
+        	if(pause===0){ //work only when !paused
+        		console.log(splitindex++);
+        		 time = {
+        		 	index:splitindex,
+        		 	hours:vm.timer.hours,
+        		 	minutes:vm.timer.minutes,
+        		 	seconds:vm.timer.seconds,
+        		 	milliseconds:vm.timer.ms
+        		 };
+        		vm.splits.push(time);
+        		
+        	}
+        }
+
+
 
     }
 
