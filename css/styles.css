@@ -1,0 +1,40 @@
+body {
+    text-align: center;
+    margin-top: 30px;
+}
+
+h1 {
+    font-family:  Lato;
+    color:teal;
+}
+
+.time {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.millisec {
+    font-size: 20px;
+    color: teal;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+.stop{background: #E5E5E5;}
+.btn-default {
+	margin: 20px;
+	border-color: teal;
+}
+
+@media (max-width: 500px) {
+    .time {
+        font-size: 20px;
+    }
+    .millisec {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+}

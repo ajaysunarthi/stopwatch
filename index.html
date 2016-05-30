@@ -3,17 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Stopwatch</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="scripts/angular.min.js"></script>
 </head>
 
 <body ng-app="stopWatch" ng-controller="appCtrl as ctrl">
-<h1>{{ ctrl.timer.hours }} {{ ctrl.timer.minutes }}  {{ ctrl.timer.seconds }} </h1>
-  <p>{{ ctrl.timer.ms }}</p>
-  <button ng-show="ctrl.showButton" ng-click="ctrl.startTimer(); ctrl.toggle()">Start</button>
-  <button ng-hide="ctrl.showButton" ng-click="ctrl.stopTimer(); ctrl.toggle()">Stop</button>
-  <button ng-click="ctrl.resetTimer()">Reset</button>
-<script src="scripts/app.js"></script>
+    <div class="container">
+        <div class="row">
+            <h1>Stopwatch</h1></div>
+        <div class="row time">
+            <div class="col-xs-1 col-xs-offset-4">{{ ctrl.timer.hours }}</div>
+            <div class="col-xs-1">{{ ctrl.timer.minutes }}</div>
+            <div class="col-xs-1">{{ ctrl.timer.seconds }}</div>
+            <div class="col-xs-1 millisec">{{ ctrl.timer.ms }}</div>
+        </div>
+        <!-- <div class="row">
+    <h1>{{ ctrl.timer.hours }} {{ ctrl.timer.minutes }}  {{ ctrl.timer.seconds }} </h1>
+    <span class="millisec">{{ ctrl.timer.ms }}</span>
+</div>
+ -->
+        <div class="row buttons">
+            <button class="btn btn-default " ng-show="ctrl.showButton" ng-click="ctrl.startTimer(); ctrl.toggle()">Start</button>
+            <button class="btn btn-default stop" ng-hide="ctrl.showButton" ng-click="ctrl.stopTimer(); ctrl.toggle()">Stop</button>
+            <button class="btn btn-default" ng-disabled="!ctrl.showButton" ng-click="ctrl.resetTimer()">Reset</button>
+        </div>
+    </div>
+    <script src="scripts/app.js"></script>
 </body>
 
 </html>
