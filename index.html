@@ -37,7 +37,7 @@
 
     <div class="row">
     	<div ng-repeat=" obj in ctrl.splits"class="splits">
-    	Split {{ obj.index | twoDigit}} - {{obj.hours}}:{{obj.minutes}}:{{obj.seconds|twoDigit}}:{{obj.milliseconds|threeDigit}}</div>
+    	Split {{ obj.index | twoDigit}} - {{obj.hours| twoDigit}}:{{obj.minutes| twoDigit}}:{{obj.seconds|twoDigit}}:{{obj.milliseconds|threeDigit}}</div>
     </div>
 
     <script src="scripts/app.js"></script>

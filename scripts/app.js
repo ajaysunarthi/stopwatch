@@ -33,8 +33,8 @@
 
         vm.showButton = true;
 
-        vm.toggle = function () {
-        	 vm.showButton = !vm.showButton;
+        vm.toggle = function() {
+            vm.showButton = !vm.showButton;
         }
 
         vm.startTimer = function() {
@@ -68,25 +68,27 @@
         };
 
         vm.resetTimer = function() {
-            if (pause) { // Reset only when it is Stopped
-                init(); // Call the initialization function
+            if (pause) {
+                vm.laps = [];
+                vm.splits = [];
+                init();
             }
         };
 
 
-        vm.splitTime = function () {
-        	if(pause===0){ //work only when !paused
-        		console.log(splitindex++);
-        		 time = {
-        		 	index:splitindex,
-        		 	hours:vm.timer.hours,
-        		 	minutes:vm.timer.minutes,
-        		 	seconds:vm.timer.seconds,
-        		 	milliseconds:vm.timer.ms
-        		 };
-        		vm.splits.push(time);
-        		
-        	}
+        vm.splitTime = function() {
+            if (pause === 0) { //work only when !paused
+                console.log(splitindex++);
+                time = {
+                    index: splitindex,
+                    hours: vm.timer.hours,
+                    minutes: vm.timer.minutes,
+                    seconds: vm.timer.seconds,
+                    milliseconds: vm.timer.ms
+                };
+                vm.splits.push(time);
+
+            }
         }
 
 
