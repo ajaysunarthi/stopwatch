@@ -31,6 +31,12 @@ h1 {
     border-color: teal;
 }
 
+.splits{
+	background: teal;
+	color: white;
+	font-size: 20px;
+}
+
 button,
 button:active,
 button:focus {
