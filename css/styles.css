@@ -31,10 +31,30 @@ h1 {
     border-color: teal;
 }
 
-.splits{
-	background: teal;
-	color: white;
-	font-size: 20px;
+.splits {
+    color: teal;
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 5px;
+    font-family: Lato;
+}
+
+.current-lap {
+    font-size: 19px;
+}
+
+.text {
+    font-size: 20px;
+}
+
+.laps {
+    color: white;
+    background-color: teal;
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-family: Lato;
 }
 
 button,

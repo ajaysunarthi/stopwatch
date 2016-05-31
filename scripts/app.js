@@ -80,7 +80,7 @@
             if (pause === 0) { //work only when !paused
                 console.log(splitindex++);
                 time = {
-                    index: splitindex,
+                    splitindex: splitindex,
                     hours: vm.timer.hours,
                     minutes: vm.timer.minutes,
                     seconds: vm.timer.seconds,
@@ -91,7 +91,30 @@
             }
         }
 
-
+        vm.lapTime = function() {
+            if (pause === 0) {
+                var lap = [];
+                if (vm.splits.length > 0) {
+                    for (var i = 0; i < vm.splits.length; i++) {
+                        lap.push(vm.splits[i]);
+                    }
+                }
+                vm.splits = [];
+                time = {
+                    lapindex: splitindex++,
+                    hours: vm.timer.hours,
+                    minutes: vm.timer.minutes,
+                    seconds: vm.timer.seconds,
+                    milliseconds: vm.timer.ms,
+                };
+                lap.push(time);
+                vm.laps.push(lap);
+                console.log(vm.laps);
+                clearInterval(interval); // Stop the iterating setInterval function
+                init(); // Call the initialization function
+                vm.startTimer(); // Start the timer
+            }
+        };
 
     }
 

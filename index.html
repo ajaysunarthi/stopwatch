@@ -31,17 +31,37 @@
             <button class="btn btn-default stop" ng-hide="ctrl.showButton" ng-click="ctrl.stopTimer(); ctrl.toggle()">Stop</button>
             <button class="btn btn-default" ng-disabled="!ctrl.showButton" ng-click="ctrl.resetTimer()">Reset</button>
             <button class="btn btn-default " ng-click="ctrl.splitTime()">Split</button>
-			<button class="btn btn-default ">Lap</button>            
+            <button class="btn btn-default " ng-click="ctrl.lapTime()">Lap</button>
         </div>
-    </div>
 
-    <div class="row">
-    	<div ng-repeat=" obj in ctrl.splits"class="splits">
-    	Split {{ obj.index | twoDigit}} - {{obj.hours| twoDigit}}:{{obj.minutes| twoDigit}}:{{obj.seconds|twoDigit}}:{{obj.milliseconds|threeDigit}}</div>
-    </div>
 
+        <div class="row text">
+            <div ng-repeat=" obj in ctrl.splits| orderBy:'splitindex':true" class="col-xs-6 col-xs-offset-3 splits">
+                <span ng-show="{{ctrl.laps.length>0}}" class="current-lap">Current Lap :</span> Split[{{ctrl.splits.length - $index}}] {{obj.hours| twoDigit}}:{{obj.minutes| twoDigit}}:{{obj.seconds|twoDigit}}:{{obj.milliseconds|threeDigit}}</div>
+        </div>
+
+
+        <div class="row text">
+            <div ng-repeat=" array in ctrl.laps" class="col-xs-6 col-xs-offset-3 laps">
+                <div>Lap[{{ctrl.laps.length - $index}}]
+                    <span ng-repeat="lap in array">
+            <span ng-hide = "{{array.length>1}}">{{lap.hours| twoDigit}}:{{lap.minutes| twoDigit}}:{{lap.seconds|twoDigit}}:{{lap.milliseconds|threeDigit}}</span>
+                    </span>
+                </div>
+                <div ng-show="{{array.length>1}}">
+                    <div ng-repeat="item in array | orderBy:'splitindex':true">
+                        
+                Split [{{array.length - $index}}] -> {{item.hours}} : {{item.minutes}} : {{item.seconds}} : {{item.milliseconds}}
+              
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
     <script src="scripts/app.js"></script>
-    <script src="scripts/filter.js"></script>    	
+    <script src="scripts/filter.js"></script>
 </body>
 
 </html>
